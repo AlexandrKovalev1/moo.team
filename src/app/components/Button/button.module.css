@@ -1,0 +1,28 @@
+.button{
+    all:unset;
+    padding: 3px 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.button:disabled{
+    cursor: no-drop;
+    opacity: 0.5;
+}
+
+.btn {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.btn:not(:disabled):hover{
+    background-color: blue;
+}
+
+.link {
+    border: 1px solid gray;
+}
+
+.link:hover{
+    background-color: gray;
+}
