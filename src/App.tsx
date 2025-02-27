@@ -1,8 +1,3 @@
-
 export const App = () => {
-    return (
-        <div>
-            ascsacac
-        </div>
-    );
-};
+  return <div>ascsacac</div>
+}
