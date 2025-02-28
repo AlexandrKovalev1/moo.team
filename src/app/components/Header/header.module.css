@@ -1,5 +1,5 @@
 .headerContainer {
     display: flex;
-    row-gap: 5px;
+    column-gap: 5px;
     align-items: center;
 }
