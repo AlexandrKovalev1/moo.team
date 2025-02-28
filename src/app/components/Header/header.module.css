@@ -2,4 +2,5 @@
     display: flex;
     column-gap: 5px;
     align-items: center;
+    min-height: 100px;
 }
