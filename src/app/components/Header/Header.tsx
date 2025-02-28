@@ -1,20 +1,41 @@
 import Container from '../Container/Container.tsx'
-import { Button } from '../Button/Button.tsx'
-import { Link } from 'react-router-dom'
+
 import s from './header.module.css'
+import { Button } from '../Button/Button.tsx'
+import { NavLink } from 'react-router-dom'
+import { PATH } from '../../providers/router/router.tsx'
 
 const Header = () => {
   return (
     <header>
-      <Container className={s.headerContainer}>
-        <Button>Btn</Button>
-        <Button disabled>Btn disabled</Button>
-        <Button as={Link} to={'/d'} variant={'link'}>
-          Link
-        </Button>
+      <Container>
+        <nav>
+          <ul className={s.navigateList}>
+            <li>
+              <Button
+                as={NavLink}
+                to={PATH.ABOUT_US}
+                variant={'link'}
+                style={highlightActiveLink}
+                className={s.active}
+              >
+                About us
+              </Button>
+            </li>
+            <li>
+              <Button as={NavLink} to={PATH.SIGN_IN} variant={'link'} style={highlightActiveLink}>
+                Sign in
+              </Button>
+            </li>
+          </ul>
+        </nav>
       </Container>
     </header>
   )
 }
 
 export default Header
+
+export const highlightActiveLink = ({ isActive }: { isActive: boolean }) => ({
+  backgroundColor: isActive ? 'lightgray' : 'inherit',
+})
