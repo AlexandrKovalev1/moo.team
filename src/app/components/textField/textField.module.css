@@ -1,0 +1,22 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-bottom: 10px;
+}
+
+.input {
+    min-height: 40px;
+    padding-left: 8px;
+    font-size: 1em;
+    border-radius: 3px;
+    border-color: gray;
+
+}
+
+.description {
+    color:gray;
+}
