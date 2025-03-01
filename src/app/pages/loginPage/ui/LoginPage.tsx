@@ -1,6 +1,6 @@
-import Container from '../../components/Container/Container.tsx'
-import { TextField } from '../../components/textField/TextField.tsx'
-import { Button } from '../../components/Button/Button.tsx'
+import Container from '../../../components/Container/Container.tsx'
+import { TextField } from '../../../components/textField/TextField.tsx'
+import { Button } from '../../../components/Button/Button.tsx'
 import s from './loginPage.module.css'
 import { useFormik } from 'formik'
 
