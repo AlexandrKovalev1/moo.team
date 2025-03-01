@@ -2,8 +2,9 @@ import { createStore, combineReducers, applyMiddleware, Action } from 'redux'
 import { thunk, ThunkDispatch } from 'redux-thunk'
 import { useDispatch } from 'react-redux'
 import { infoPageReducer } from '../../pages/infoPage/model/infoPageReducer.ts'
+import { authReducer } from '../../pages/loginPage/model/authReducer.ts'
 
-const rootReducers = combineReducers({ infoPage: infoPageReducer })
+const rootReducers = combineReducers({ infoPage: infoPageReducer, auth: authReducer })
 
 export const store = createStore(rootReducers, applyMiddleware(thunk))
 
