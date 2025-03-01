@@ -3,18 +3,28 @@ import { TextField } from '../../../components/textField/TextField.tsx'
 import { Button } from '../../../components/Button/Button.tsx'
 import s from './loginPage.module.css'
 import { useFormik } from 'formik'
+import { AppRootStateType, useAppDispatch } from '../../../providers/store/store.ts'
+import { loginTC } from '../model/authReducer.ts'
+import { useSelector } from 'react-redux'
+import { PATH } from '../../../providers/router/router.tsx'
+import { Navigate } from 'react-router-dom'
 
 export const LoginPage = () => {
+  const dispatch = useAppDispatch()
+  const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.isAuth)
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
     onSubmit: values => {
-      console.log(values)
-      formik.resetForm()
+      dispatch(loginTC(values)).then(_ => formik.resetForm())
     },
   })
+
+  if (isAuth) {
+    return <Navigate to={PATH.PROFILE} />
+  }
 
   return (
     <div>

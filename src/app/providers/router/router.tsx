@@ -28,6 +28,10 @@ const privateRotes: RouteObject[] = [
 
 const publicRotes: RouteObject[] = [
   {
+    path: PATH.BASE,
+    element: <Navigate to={PATH.PROFILE} />,
+  },
+  {
     path: PATH.ABOUT_US,
     element: <InfoPage />,
   },

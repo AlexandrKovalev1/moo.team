@@ -4,10 +4,17 @@ import { NavLink } from 'react-router-dom'
 import { PATH } from '../providers/router/router.tsx'
 import { highlightActiveLink } from '../components/Header/Header.tsx'
 import { useSelector } from 'react-redux'
-import { AppRootStateType } from '../providers/store/store.ts'
+import { AppRootStateType, useAppDispatch } from '../providers/store/store.ts'
+import { logOutTC } from '../pages/loginPage/model/authReducer.ts'
 
 export const Navigate = () => {
   const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.isAuth)
+
+  const dispatch = useAppDispatch()
+
+  const onLogoutHandler = () => {
+    dispatch(logOutTC())
+  }
   return (
     <nav>
       <ul className={s.navigateList}>
@@ -37,7 +44,13 @@ export const Navigate = () => {
         )}
         <li>
           {isAuth ? (
-            <Button as={NavLink} to={''} variant={'link'} style={highlightActiveLink}>
+            <Button
+              as={NavLink}
+              to={''}
+              variant={'link'}
+              style={highlightActiveLink}
+              onClick={onLogoutHandler}
+            >
               Sign out
             </Button>
           ) : (

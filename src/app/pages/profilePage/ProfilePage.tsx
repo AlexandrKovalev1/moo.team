@@ -12,8 +12,8 @@ export const ProfilePage = () => {
           <h1>Welcome,Alexey!</h1>
           <Button>Update</Button>
         </div>
+        <div>здесь место для объединенного результата длительного вызова</div>
       </Container>
-      <div>здесь место для объединенного результата длительного вызова</div>
     </div>
   )
 }
