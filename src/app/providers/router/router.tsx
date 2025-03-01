@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import { App } from '../../../App.tsx'
 import InfoPage from '../../pages/infoPage/ui/InfoPage.tsx'
 import { LoginPage } from '../../pages/loginPage/LoginPage.tsx'
+import { ProfilePage } from '../../pages/profilePage/ProfilePage.tsx'
 
 export const PATH = {
   ABOUT_US: '/info',
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: PATH.SIGN_IN,
         element: <LoginPage />,
+      },
+      {
+        path: PATH.PROFILE,
+        element: <ProfilePage />,
       },
     ],
   },
