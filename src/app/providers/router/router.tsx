@@ -7,6 +7,7 @@ export const PATH = {
   ABOUT_US: '/info',
   SIGN_IN: '/login',
   BASE: '/',
+  PROFILE: '/profile',
 }
 
 export const router = createBrowserRouter([
