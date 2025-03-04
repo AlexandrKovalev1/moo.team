@@ -19,7 +19,17 @@ export const loginResponseError = {
   },
 }
 
+export const profileResponse = {
+  success: true,
+  data: {
+    fullname: 'Aleksei K',
+    email: 'aleksei@example.com',
+  },
+}
+
 export const logOutResponse = { success: true, data: {} }
+
+export type ProfileResponse = BaseResponse<{ fullname: string; email: string }>
 
 export type BaseResponse<D = {}> = {
   success: boolean
@@ -37,3 +47,5 @@ export type InfoResponse = BaseResponse<{
 }>
 
 export type LogOutResponse = BaseResponse
+
+export type RandomAuthorResponse = BaseResponse<{ authorId: number; name: string }>
