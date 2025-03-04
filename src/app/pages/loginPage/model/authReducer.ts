@@ -2,8 +2,10 @@ import { AppDispatchType } from '../../../providers/store/store.ts'
 import { authApi } from '../api/authApi.ts'
 
 const initialState = {
-  isAuth: false,
+  isAuth: !false,
 }
+
+const TOKEN = 'token'
 
 export const authReducer = (
   state: InitialState = initialState,
@@ -31,14 +33,17 @@ export const logOutAC = () => {
 }
 
 export const logOutTC = () => (dispatch: AppDispatchType) => {
-  authApi.logOut().then(_ => dispatch(logOutAC()))
+  authApi.logOut().then(_ => {
+    dispatch(logOutAC())
+    localStorage.removeItem(TOKEN)
+  })
 }
 
 export const loginTC =
   (payload: { email: string; password: string }) => (dispatch: AppDispatchType) => {
     return authApi.login(payload).then(res => {
       if (res.data.token) {
-        localStorage.setItem('token', res.data.token)
+        localStorage.setItem(TOKEN, res.data.token)
         dispatch(loginAC())
       }
     })
