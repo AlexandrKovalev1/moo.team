@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate, Outlet, RouteObject } from 'react-router
 import { App } from '../../../App.tsx'
 import InfoPage from '../../pages/infoPage/ui/InfoPage.tsx'
 import { LoginPage } from '../../pages/loginPage/ui/LoginPage.tsx'
-import { ProfilePage } from '../../pages/profilePage/ProfilePage.tsx'
+import { ProfilePage } from '../../pages/profilePage/ui/ProfilePage.tsx'
 import { useSelector } from 'react-redux'
 import { AppRootStateType } from '../store/store.ts'
 
@@ -10,6 +10,7 @@ export const PATH = {
   ABOUT_US: '/info',
   SIGN_IN: '/login',
   BASE: '/',
+  BASE_PROFILE: '/profile/*',
   PROFILE: '/profile',
 }
 
@@ -21,7 +22,7 @@ export const ProtectedRoutes = () => {
 
 const privateRotes: RouteObject[] = [
   {
-    path: PATH.PROFILE,
+    path: PATH.BASE_PROFILE,
     element: <ProfilePage />,
   },
 ]
