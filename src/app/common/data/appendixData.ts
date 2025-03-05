@@ -13,7 +13,7 @@ export const autors = [
   },
 ]
 
-export const qoutes = [
+export const quotes = [
   {
     quoteId: 1,
     authorId: 1,
