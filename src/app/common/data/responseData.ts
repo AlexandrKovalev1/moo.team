@@ -36,6 +36,10 @@ export type BaseResponse<D = {}> = {
   data: D
 }
 
+export type Author = { authorId: number; name: string }
+
+export type Quote = { quoteId: number; authorId: number; quote: string }
+
 export type LoginResponse = BaseResponse<{
   token?: string
   message?: string
@@ -48,4 +52,6 @@ export type InfoResponse = BaseResponse<{
 
 export type LogOutResponse = BaseResponse
 
-export type RandomAuthorResponse = BaseResponse<{ authorId: number; name: string }>
+export type RandomAuthorResponse = BaseResponse<Author>
+
+export type RandomQuoteResponse = BaseResponse<Quote>
