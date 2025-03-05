@@ -13,8 +13,8 @@ export const LoginPage = () => {
   const isAuth = useAppSelector(state => state.auth.isAuth)
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: 'aleksei@example.com',
+      password: 'lkJlkn8hj',
     },
     onSubmit: values => {
       dispatch(loginTC(values)).then(_ => formik.resetForm())

@@ -2,7 +2,7 @@ import { AppDispatchType } from '../../../providers/store/store.ts'
 import { authApi } from '../api/authApi.ts'
 
 const initialState = {
-  isAuth: !false,
+  isAuth: false,
 }
 
 const TOKEN = 'token'
