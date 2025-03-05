@@ -12,6 +12,7 @@ export const PATH = {
   BASE: '/',
   BASE_PROFILE: '/profile/*',
   PROFILE: '/profile',
+  GITHUB_PAGES: '/moo.team/',
 }
 
 export const ProtectedRoutes = () => {
@@ -29,7 +30,7 @@ const privateRotes: RouteObject[] = [
 
 const publicRotes: RouteObject[] = [
   {
-    path: PATH.BASE,
+    path: PATH.GITHUB_PAGES,
     element: <Navigate to={PATH.PROFILE} />,
   },
   {
